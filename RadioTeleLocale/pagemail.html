@@ -1,0 +1,697 @@
+<!-- HTML and CSS part: -->
+<html>
+<head>
+<title>Radio Tele Locale</title>
+<meta charset="UTF-8">
+<meta name="description" content="Chiaramonte Gulfi - Web Radio page">
+<meta name="keywords" content="HTML,CSS,JS">
+<meta name="author" content="Ettore Panasia">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 0.383 -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<meta http-equiv="refresh"  content="3600;url="/>
+</head>
+<!-- Collegamento alla pagina php -->
+<form action="radiotl.php" method="GET">
+<!-- Favicon della pagina -->
+<link rel="icon" href="Logoradiotelelocale.png" type="image/png" />
+<!-- |Tutti gli style fanno parte di CSS|\|Inizio pagina| -->
+<body bgcolor="black">
+<!-- sfondo -->
+<style>
+body {
+	background-image: url("sfondo.jpg");
+	max-width:100%;
+	height:auto;
+}
+</style>
+<!-- Homepage layout CSS-->
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+<!-- Pulsanti -->
+<style>
+.button {
+  background-color: Transparent;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  overflow: hidden; <!-- Puo' essere scroll\hidden\auto\visible, la barra che usi per scorrere -->
+}
+
+.button1 {
+  background-color: none; 
+  font-weight: bolder;
+  color: white; 
+  border: 2px solid #4CAF51;
+  border-radius: 20px;
+}
+
+.button2 {
+  background-color: none; 
+  font-weight: bolder;
+  color: white;  
+  border: 2px solid #008CBA;
+  border-radius: 20px;
+}
+
+.button3 {
+  background-color: none; 
+  font-weight: bolder;
+  color: white; 
+  border: 2px solid #f44336;
+  border-radius: 20px;
+}
+
+.button4 {
+  background-color: none; 
+  font-weight: bolder;
+  color: white; 
+  border: 2px solid #e7e7e7;
+  border-radius: 20px;
+}
+
+.button5 {
+  background-color: none; 
+  font-weight: bolder;
+  color: white; 
+  border: 2px solid orange;
+  border-radius: 20px;
+}
+
+.button6 {
+  background-color: none; 
+  font-weight: bolder;
+  color: white; 
+  border: 2px solid yellow;
+  border-radius: 20px;
+}
+
+.button7 {
+  background-color: none; 
+  font-weight: bolder;
+  color: white; 
+  border: 2px solid purple;
+  border-radius: 20px;
+}
+</style>
+<!-- colore selezione pulsanti -->
+<style>
+.button:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+.button:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+.button:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.button:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+<!-- animazione dei pulsanti -->
+<style>
+.button {
+  display: inline-block;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  transition: all 0.5s;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  right: 0;
+  transition: 0.2s;
+}
+.button:hover span {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 22px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 95%;
+}
+.button2:hover span:after {
+  opacity: 1;
+  right: 95%;
+}
+.button3:hover span:after {
+  opacity: 1;
+  right: 95%;
+}
+.button4:hover span:after {
+  opacity: 1;
+  right: 95%;
+}
+.button5:hover span:after {
+  opacity: 1;
+  right: 95%;
+}
+.button6:hover span:after {
+  opacity: 1;
+  right: 95%;
+}
+.button7:hover span:after {
+  opacity: 1;
+  right: 95%;
+}
+</style>
+<!-- SlideShow CSS -->
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<!-- Riquadro social media CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  padding: 20px;
+  font-size: 25px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #e95950;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff4400;
+  color: white;
+}
+</style>
+<!-- animazione jello logo CSS -->
+<style>
+@keyframes jello {
+  0% {
+    transform: skewX(0.0deg) skewY(0.0deg);
+  }
+  25% {
+    transform: skewX(1.0deg) skewY(-2.5deg);
+  }
+  50% {
+    transform: skewX(0.0deg) skewY(0.0deg);
+  }
+  75% {
+    transform: skewX(-5.0deg) skewY(3.0deg);
+  }
+}
+
+.jello {
+  animation: jello 20s infinite;
+  transform-origin: center;
+}
+
+.center {
+  display: inline-block;
+}
+
+.jello {
+  animation: jello 20s infinite;
+  transform-origin: center;
+}
+
+.center {
+  display: inline-block;
+}
+</style>
+<!-- barra grigia e animazione CSS -->
+<style>
+html {
+  scroll-behavior: smooth;
+  
+}
+.barrax {
+  background-color: #4a4a4a;
+  padding: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+.barrax:hover {
+  margin-left: 0px;
+  margin-right: 0px;
+  opacity: 0.5;
+}
+</style>
+<!-- scrolling animation CSS -->
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  padding-top: 75px;
+  font-size: 3em;
+  opacity: 1;
+}
+
+/* Animations */
+
+[data-aos="example-anim1"] {
+  transform: skewX(45deg);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: skewX(0);
+    opacity: 1;
+  }
+}
+
+[data-aos="example-anim2"] {
+  background: red;
+  transition-property: background;
+  &.aos-animate {
+    background: green;
+  }
+}
+
+[data-aos="example-anim3"] {
+  transform: rotate(360deg);
+  opacity: 0;
+  transition-property: transform, opacity;
+  &.aos-animate {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+</style>
+<!-- testo CSS tooltip -->
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<!-- testo CSS tooltip LEFT -->
+<style>
+.tooltipl {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltipl .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 105%;
+}
+
+.tooltipl .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 100%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltipl:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<!-- Banner per mobile -->
+<style>
+  .responsivebanner {
+      width=auto;
+  }
+  @media screen and (max-width: 800px) {
+  .responsivebanner {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+<!-- header HTML -->
+<div class="header">
+	<div id="foo" class="center jello" style="">
+  <button name="x" value="home" class="button button" style="vertical-align:middle"><img class="responsivebanner" class="center jello" src="Banneradio.png"></button>
+	</div>
+</div>
+<!-- Responsive button -->
+      <style>
+          .advscorr {
+              visibility: hidden;
+              text-align: right;
+              line-height: 0;
+          }
+          @media screen and (max-width: 800px) {
+              .topnav {   
+                width: 100%;
+                padding: 0;
+                overflow: auto;
+                
+              }
+              .advscorr {
+                  visibility: visible;
+                  padding: 0;
+              }
+          }
+      </style>
+<!-- Navigation bar HTML -->
+<div class="topnav">
+  <table align="center" style="color:white; font-weight: bolder;">
+  <tr><td><button name="x" value="home" class="button button1" style="vertical-align:middle"><span>HOME</span></button></td>
+  <td><button name="x" value="radio" class="button button2" style="vertical-align:middle"><span>RADIO</span></button></td>
+  <td><button name="x" value="news" class="button button3" style="vertical-align:middle"><span>NEWS</span></button></td>
+  <td><button name="x" value="musica" class="button button4" style="vertical-align:middle"><span>MUSICA</span></button></td>
+  <td><button name="x" value="programmi" class="button button5" style="vertical-align:middle"><span>PROGRAMMI</span></button></td>
+  <td><button name="x" value="animazione" class="button button6" style="vertical-align:middle"><span>ANIMAZIONE</span></button></td>
+  <td><button name="x" value="extra" class="button button7" style="vertical-align:middle"><span>EXTRA</span></button></td></tr>
+  </table>
+</div>
+<div class="advscorr">
+  <p style="color:yellow; font-size: 10px;">Scorri verso destra per altre opzioni</p>
+</div>
+<!-- DIVERSO da qui-->
+<!-- left content HTML -->
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h1>Email commerciale:</h1>
+      <div style="background: #ededed;">
+        <p style="font-weight: 900; font-size: 50px; text-align: center;">studioradiotelelocale@gmail.com</p>
+      </div>
+      <div class="container">
+		<div class="card" width="auto" style="text-align: center;">
+		  <h3>Contattaci anche sui nostri social:</h3>
+		  <!-- Riquadro social media HTML -->
+		  <div class="tooltip">
+		  <span id="fb" class="tooltiptext">Facebook</span><a id="fb" href="https://www.facebook.com/radiotelelocale" target="_blank" class="fa fa-facebook"></a>
+		</div>
+			<div class="tooltip">
+			  <span id="tt" class="tooltiptext">Twitter</span><a id="tt" href="https://twitter.com/radiotelelocale?lang=cs" target="_blank" class="fa fa-twitter"></a>
+			</div>
+			<div class="tooltip">
+			  <span id="ig" class="tooltiptext">Instagram</span><a id="ig" href="https://www.instagram.com/radiotelelocale/" target="_blank" class="fa fa-instagram"></a>
+			</div>
+			<div class="tooltip">
+			  <span id="sc" class="tooltiptext">Soundcloud</span><a id="sc" href="https://soundcloud.com/radio-tele-locale" target="_blank" class="fa fa-soundcloud"></a>
+			</div>
+		</div>
+	  </div>
+    </div>
+	<div class="card" style="text-align: center;">
+      <h1>LO STAFF RINGRAZIA!</h1>
+      <p>per il tempo che trascorri con noi</p>
+      <div class="container">
+       <p>
+		<img width=100% src="primafo.jpg">
+	   </p>
+	  </div>
+    </div>
+	<div class="card" class="leftcolumn">
+      <h2><center>ULTIMI POST:</center></h2>
+      <h5><center>Radio Tele Locale, oggi:</center></h5>
+      <div class="container"  style="background-color:#eae8ff">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v5.0"></script>
+       <center>
+        <div class="fb-page" data-href="https://www.facebook.com/radiotelelocale/" data-tabs="timeline" data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/radiotelelocale/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/radiotelelocale/">Radio Tele Locale</a></blockquote></div>
+       </center>
+      </div>
+  </div>
+  </div>
+</div>
+<!-- iframe responsive display -->
+<style>
+    #iframe {left:0px;top:0px;}
+</style>
+</body>
+</form>
+</html>
